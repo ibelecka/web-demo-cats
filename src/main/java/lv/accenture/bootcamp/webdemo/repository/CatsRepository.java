@@ -31,5 +31,29 @@ public class CatsRepository {
 		cat.setId(id);
 		cats.add(cat);
 	}
+	
+	public Cat findById (Long id) {
+		
+		for (Cat c: cats) {
+			if (c.getId().equals(id)) {
+				return c;
+			}
+		}
+		throw new IllegalArgumentException("Cat by id: " + id + " not found!");
+	}
+	
+	public void update (Cat cat) {
+
+		for (int i = 0; i<cats.size(); i++) {
+			if (cats.get(i).getId().equals(cat.getId())) {
+				//cats.get(i).setNickname(cat.getNickname());
+				cats.set(i, cat);
+				System.out.println(cats.get(i).getNickname());
+				break;
+			}
+		}
+
+
+	}
 
 }
