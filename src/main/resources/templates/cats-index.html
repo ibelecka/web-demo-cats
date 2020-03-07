@@ -10,19 +10,27 @@
     <h3> Cats avalible: </h3>
     <table class="table table-bordered">
 		<tr>
-			<th>ID</th>
 			<th>Name</th>
+			<th>Age</th>
+			<th>Photo </th>
 			<th>Action</th>
 		</tr>
 		<tr>
 		    <tr th:each="cat: ${cats}">
-		        <td th:text="${cat.id}"/>
 		        <td th:text="${cat.nickname}"/>
+		        <td th:text="${cat.age}"/>
+		        <td> 
+		        	<img th:src="${cat.photo}"/ style="height:80px;">		        
+		        </td>
 		        <td>
 		       		 <a th:href="@{/cats/edit/{id}(id=${cat.id})}" class="btn btn-outline-primary">
 		  				  <span>Edit</span>
 					 </a>
+					 <a th:href="@{/cats/delete/{id}(id=${cat.id})}" class="btn btn-outline-danger">
+		  				  <span>Delete</span>
+					 </a>
 		        </td>
+	
 		        
   			</tr>
 		</tr>

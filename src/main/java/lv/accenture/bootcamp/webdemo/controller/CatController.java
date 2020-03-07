@@ -51,9 +51,13 @@ public class CatController {
 	
 	@PostMapping("/cats/edit-cat/{id}") 
 	public String edit(Cat catToEdit) {
-		System.out.println(catToEdit.getNickname());
-		System.out.println(catToEdit.getId());
 		catsRepository.update(catToEdit);
+		return "redirect:/cats";
+	}
+	
+	@GetMapping("/cats/delete/{id}")
+	public String deleteCatPage(@PathVariable Long id) {
+		catsRepository.deleteCat(id);
 		return "redirect:/cats";
 	}
 	

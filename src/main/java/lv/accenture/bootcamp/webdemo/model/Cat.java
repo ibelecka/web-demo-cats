@@ -4,6 +4,41 @@ import java.io.Serializable;
 
 public class Cat implements Serializable {
 	
+
+
+	public String getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(String photo) {
+		this.photo = photo;
+	}
+
+	private Long id;
+	private String nickname;
+	private int age;
+	private String photo;
+	
+	public Cat() {
+		
+	}
+
+	public Cat(Long id, String nickname, int age, String photo) {
+		this.id = id;
+		this.nickname = nickname;
+		this.age = age;
+		this.photo = photo;
+	}
+	
+	
+	
+	
+	public Cat(Long id, String nickname) {
+		super();
+		this.id = id;
+		this.nickname = nickname;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -20,18 +55,14 @@ public class Cat implements Serializable {
 		this.nickname = nickname;
 	}
 
-	private Long id;
-	private String nickname;
-	
-	public Cat() {
-		
+
+	public int getAge() {
+		return age;
 	}
 
-	public Cat(Long id, String nickname) {
-		this.id = id;
-		this.nickname = nickname;
+	public void setAge(int age) {
+		this.age = age;
 	}
-	
 	
 	
 	
