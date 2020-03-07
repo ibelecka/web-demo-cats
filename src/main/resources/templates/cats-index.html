@@ -7,8 +7,30 @@
 </head>
 <body>
     <div class="container">
-        <h3>Here is cats!</h3>
-		<p th:text=${test}></p>
+    <h3> Cats avalible: </h3>
+    <table class="table table-bordered">
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Action</th>
+		</tr>
+		<tr>
+		    <tr th:each="cat: ${cats}">
+		        <td th:text="${cat.id}"/>
+		        <td th:text="${cat.nickname}"/>
+		        <td>
+		       		 <a th:href="@{/cat/edit/{id}(id=${cat.id})}" class="btn btn-outline-primary">
+		  				  <span>Edit</span>
+					 </a>
+		        </td>
+		        
+  			</tr>
+		</tr>
+    </table>
+    <div>
+	    <a th:href="@{/cats/add}" class="btn btn-outline-primary">Add cat! </a>
+	</div>	
+		
     </div>
 </body>
 </html>
