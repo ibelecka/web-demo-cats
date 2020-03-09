@@ -2,9 +2,24 @@ package lv.accenture.bootcamp.webdemo.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Cat implements Serializable {
 	
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+	private String nickname;
+	private int age;
+	private String photo;
+	
+	public Cat() {
+		
+	}
 
 	public String getPhoto() {
 		return photo;
@@ -14,14 +29,6 @@ public class Cat implements Serializable {
 		this.photo = photo;
 	}
 
-	private Long id;
-	private String nickname;
-	private int age;
-	private String photo;
-	
-	public Cat() {
-		
-	}
 
 	public Cat(Long id, String nickname, int age, String photo) {
 		this.id = id;
